@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Button Background Color</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 90vh;
+                min-width: 100vw;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                background-image: -webkit-gradient(
+                    linear,
+                    left top,
+                    right top,
+                    color-stop(0, #f22),
+                    color-stop(0.15, #f2f),
+                    color-stop(0.3, #22f),
+                    color-stop(0.45, #2ff),
+                    color-stop(0.6, #2f2),
+                    color-stop(0.75, #2f2),
+                    color-stop(0.9, #ff2),
+                    color-stop(1, #f22)
+                );
+
+                background-image: gradient(
+                    linear,
+                    left top,
+                    right top,
+                    color-stop(0, #f22),
+                    color-stop(0.15, #f2f),
+                    color-stop(0.3, #22f),
+                    color-stop(0.45, #2ff),
+                    color-stop(0.6, #2f2),
+                    color-stop(0.75, #2f2),
+                    color-stop(0.9, #ff2),
+                    color-stop(1, #f22)
+                );
+            }
+
+            .container {
+                font-family: 'Poppins', sans-serif;
+                background: white;
+                min-height: 13rem;
+                padding: 10px;
+                height: 15vh;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            #button {
+                font-size: 18pt;
+                font-family: 'Poppins', sans-serif;
+                border: none;
+                background: rgba(0, 0, 0, 0.4);
+                font-weight: 600;
+                background: linear-gradient(to right, #8e2de2, #4a00e0);
+                color: white;
+                border-radius: 5px;
+                padding: 0.75rem;
+                position: relative;
+            }
+
+            h2 {
+                text-align: center;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Background Color:<br /><span id="span">Rainbow</span></h2>
+            <input type="submit" value="CLICK ME" id="button" />
+        </div>
+
+        <script>
+            const button = document.getElementById('button');
+            button.addEventListener('click', click);
+
+            const span = document.getElementById('span');
+
+            function click() {
+                const x = Math.floor(Math.random() * 256);
+                const y = Math.floor(Math.random() * 256);
+                const z = Math.floor(Math.random() * 256);
+
+                const backColor = 'rgb(' + x + ',' + y + ',' + z + ')';
+
+                console.log(backColor);
+
+                document.body.style.background = backColor;
+
+                span.innerText = backColor;
+            }
+        </script>
+    </body>
+</html>
